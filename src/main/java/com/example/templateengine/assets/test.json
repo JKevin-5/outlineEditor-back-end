@@ -1,0 +1,10 @@
+{
+  "data": [
+    {"type": "title", "status": false, "content": "《Java Web技术》课程教学大纲（理论）"},
+    {"type": "fixedTable", "content": {"author": "侯霞", "credit": 3, "period": 48, "reviewer": "刘建宾", "course_id": "0BH04227", "discipline": "软件工程", "obligatory": "■必修   □选修", "precondition": "面向对象技术（C++/Java）", "practice_hour": "实验：16学时", "course_name_cn": "Java Web技术", "course_name_en": "The Technologies of Java Web"}},
+    {"type": "subhead", "status": false, "content": "一、课程的地位与作用"},
+    {"type": "paragraph", "status": true, "content": "Java Web技术是软件工程专业本科生的专业必修课。该课程全面详细地介绍从事Java Web开发所应掌握的常用技术，包括JSP、Servlet、JDBC、JavaBean等。通过对该课程的学习，使学生了解Java Web应用开发的技术发展趋势，掌握Java Web各种技术在项目开发中的基本应用方法，理解Java Web开发中系统分层的理念和MVC设计模式，以及一些系统开发中应注意的常见问题。"},
+    {"type": "paragraph", "status": true, "content": "本课程主要使学生扎实地掌握Java Web编程的基本方法和技能，为以后从事Java Web实际项目开发打下坚实的基础。"},
+    {"type": "subhead", "status": false, "content": "二、课程对应的毕业要求"},
+    {"type": "thirdhead", "status": true, "content": "1、课程教学目标及其达成途径"}]
+}
