@@ -24,6 +24,12 @@ public interface TemplateMapper {
     public Template getTemplateById(int id);
 
     /*
+    * 查找最新模板 By date
+    * */
+    @Select("SELECT * FROM bishe.template where date <=#{date} order by date desc limit 1")
+    public Template getLastTemplate(String date);
+
+    /*
      * 删除模板
      * */
     @Delete("delete from template where id=#{id}")

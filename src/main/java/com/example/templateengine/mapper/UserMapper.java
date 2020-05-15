@@ -15,7 +15,7 @@ public interface UserMapper {
     /*
     * 功能说明：查找所有user
     * */
-    @Select("select userId,name,authority from user")
+    @Select("select userId,name,authority,userName from user")
     public List<user> showUsers();
 
     /*
@@ -39,7 +39,7 @@ public interface UserMapper {
     /*
     * 功能说明：更改用户密码
     * */
-    @Update("update user set passWord=#{password} where userId=#{userId}")
+    @Update("update user set passWord=#{passWord} where userId=#{userId}")
     public int updateUser(user user);
 
     /*
@@ -49,9 +49,15 @@ public interface UserMapper {
     public int changeUserById(user user);
 
     /*
+    * 功能说明：更改用户信息
+    * */
+    @Update("update user set userName=#{userName},name=#{name},authority=#{authority},passWord=#{passWord} where userId=#{userId}")
+    public int changeUserInfo(user user);
+
+    /*
     * 功能说明：新建用户
     * */
-    @Insert("insert into user(userId,userName,passWord,authority) values(#{userId},#{userName},#{passWord},#{authority})")
+    @Insert({"insert into user(userName,passWord,authority,name) values(#{userName},#{passWord},#{authority},#{name})"})
     public int insertUser(user user);
 
 }

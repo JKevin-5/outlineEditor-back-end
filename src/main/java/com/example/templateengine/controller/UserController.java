@@ -54,6 +54,10 @@ public class UserController {
     @ApiOperation("新建用户接口")
     @PostMapping("/insertUser")
     public int insertUser(@RequestBody user user){
+        System.out.println(user.toString());
+        String recode = user.getPassWord();
+        user.setPassWord(userUtil.encryption(recode));
+
         return userMapper.insertUser(user);
     }
 
@@ -62,10 +66,28 @@ public class UserController {
     @PostMapping("/updatePassWord")
     public int updatePassWord(@RequestBody user user){
         String recode = user.getPassWord();
-        user.setPassWord(userUtil.encryption(recode));
-        return userMapper.updateUser(user);
+        System.out.println("加密前的密码"+user.getPassWord());
+        if(!recode.equals("")){
+            user.setPassWord(userUtil.encryption(recode));
+            return userMapper.updateUser(user);
+        }else{
+            return 200;
+        }
+        //System.out.println("加密后的密码"+userUtil.encryption(recode));
+
     }
 
+    @PostMapping("/updateUserInfo")
+    public int updateUserInfo(@RequestBody user user){
+        String recode = user.getPassWord();
+        System.out.println("加密前的密码"+user.toString());
+        if(!recode.equals("")){
+            user.setPassWord(userUtil.encryption(recode));
+            return userMapper.changeUserInfo(user);
+        }else{
+            return 200;
+        }
+    }
 
     //更改用户权限
     @PostMapping("/changeAuthority")

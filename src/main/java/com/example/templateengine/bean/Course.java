@@ -2,12 +2,12 @@ package com.example.templateengine.bean;
 
 public class Course {
 
+    //课程编号
+    private String course_id;
     //课程名称
     private String course_name_cn;
     //英文名称
     private String course_name_en;
-    //课程编号
-    private String course_id;
     //学分
     private int credit;
     //总学时
@@ -24,6 +24,8 @@ public class Course {
     private String reviewer;
     //先修课程
     private String precondition;
+    //版本
+    private String version;
 
     public String getCourse_name_cn() {
         return course_name_cn;
@@ -111,5 +113,13 @@ public class Course {
 
     public void setPrecondition(String precondition) {
         this.precondition = precondition;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 }

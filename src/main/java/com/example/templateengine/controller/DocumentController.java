@@ -22,10 +22,15 @@ public class DocumentController {
     @RequestMapping("/getDocuments")
     public List<Document> show(){return documentMapper.getAllDocuments();}
 
+    //查看所有文档
+    @RequestMapping("/getDocuments/{userName}")
+    public List<Document> getDocumentByUserName(@PathVariable("userName") String userName){
+        return documentMapper.getDocumentByUserName(userName);
+    }
+
     //查找文档
     @GetMapping("/getDocument/{id}")
-    public JSONObject getDocument(@PathVariable("id") int id){
-
+    public JSONObject getDocumentById(@PathVariable("id") int id){
         Document document = documentMapper.getDocumentById(id);
         JSONObject json =new JSONObject();
         json.put("id",document.getId());
@@ -54,6 +59,12 @@ public class DocumentController {
     @RequestMapping("/updateDocument")
     public int updateDocument(@RequestBody Document document){
         return documentMapper.updateDocument(document);
+    }
+
+    //更新文档状态
+    @RequestMapping("/updateStatus/{id}/{status}")
+    public int updateStatus(@PathVariable("id") int id,@PathVariable("status") String status){
+        return documentMapper.updateDocumentByStatus(id,status);
     }
 
     //获取当前表格自增id

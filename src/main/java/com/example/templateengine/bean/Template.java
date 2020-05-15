@@ -1,9 +1,5 @@
 package com.example.templateengine.bean;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-
-import java.util.Date;
 
 public class Template {
     private int id;

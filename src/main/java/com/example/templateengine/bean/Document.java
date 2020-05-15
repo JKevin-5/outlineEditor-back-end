@@ -8,6 +8,15 @@ public class Document {
     private int t_id;
     private String content;
     private String status;
+    private String userName;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     public int getId() {
         return id;

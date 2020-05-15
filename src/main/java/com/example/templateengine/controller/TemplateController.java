@@ -41,6 +41,20 @@ public class TemplateController {
         return json;
     }
 
+    //查找最新模板
+    @GetMapping("/getLastTemplate/{date}")
+    public JSONObject getLastTemplate(@PathVariable("date") String date){
+        Template template = templateMapper.getLastTemplate(date);
+        JSONObject json = new JSONObject();
+        json.put("id",template.getId());
+        json.put("date",template.getDate());
+        json.put("remark",template.getRemark());
+        //string转json对象
+        JSONObject content = JSON.parseObject(template.getContent());
+        json.put("content",content);
+        return json;
+    }
+
     //删除模板
     @RequestMapping("/deleteTemplate/{id}")
     public int delTemplate(@PathVariable("id") int id){
